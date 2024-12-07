@@ -454,7 +454,7 @@ LocalPlr:addToggle({
         end
     end})
     
-    Setting:addKeybind({title = "Toggle Ui" key = Enum.KeyCode.Tab, callback = function(b)
+    Setting:addKeybind({title = "Toggle Ui", key = Enum.KeyCode.Tab, callback = function(b)
         UI:toggle()
     end})
     
