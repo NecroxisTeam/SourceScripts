@@ -401,7 +401,7 @@ LocalPlr:addToggle({
         end
     end})
     
-    TrollIng:addLabel({title = "   Its Not Working For Sometimes:/"})
+    TrollIng:addLabel({title = "      Its Not Working For Sometimes:/"})
     TrollIng:addToggle({title "Spam Sign", default = features["SpamSign"], callback = function(val)
         
     end})
