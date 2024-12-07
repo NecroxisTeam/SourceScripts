@@ -231,27 +231,27 @@ local Trolling = UI:addPage({
 local Settings = UI:addPage({
     title = "Settings"
 })
-local LocalPlr = LocalPl:addSection({
+local LocalPlr_SECT = LocalPl:addSection({
     title = "Player"
 })
-local Visual = Visual:addSection({
+local Visual_SECT = Visual:addSection({
     title = "Visual"
 })
-local TrollIng = Trolling:addSection({
+local TrollIng_SECT = Trolling:addSection({
     title = "Trolling"
 })
-local Setting = GameModes:addSection({
+local Settings_SECT = GameModes:addSection({
     title = "Settings"
 })
 
-LocalPlr:addToggle({
+LocalPlr_SECT:addToggle({
         title = "Speed Toggle", 
         default = features["SpeedToggle"],
         callback = function(val)
         features["SpeedToggle"] = val
     end})
     
-    LocalPlr:addSlider({
+    LocalPlr_SECT:addSlider({
     title = "Speed Value",
     default = features["SpeedValue"],
     min = 16,
@@ -260,14 +260,14 @@ LocalPlr:addToggle({
         features["SpeedValue"] = Value
     end})
     
-    LocalPlr:addToggle({
+    LocalPlr_SECT:addToggle({
         title = "Jump Toggle", 
         default = features["JumpToggle"],
         callback = function(val)
         features["JumpToggle"] = val
     end})
     
-    LocalPlr:addSlider({
+    LocalPlr_SECT:addSlider({
     title = "Jump Value",
     default = features["JumpValue"],
     min = 50,
@@ -276,7 +276,7 @@ LocalPlr:addToggle({
         features["JumpValue"] = Value
     end})
     
-LocalPlr:addToggle({
+LocalPlr_SECT:addToggle({
         title = "Fly", 
         default = functionforscript_mm2["Fly"],
         callback = function(val)
@@ -288,7 +288,7 @@ LocalPlr:addToggle({
         end
     end})
     
-    LocalPlr:addSlider({
+    LocalPlr_SECT:addSlider({
     title = "Fly Speed",
     default = functionforscript_mm2["FlyValue"],
     min = 10,
@@ -297,7 +297,7 @@ LocalPlr:addToggle({
         features["FlyValue"] = Value
     end})
     
-    LocalPlr:addToggle({
+    LocalPlr_SECT:addToggle({
         title = "Fling Toggle", 
         default = features["FlingToggle"],
         callback = function(val)
@@ -320,7 +320,7 @@ LocalPlr:addToggle({
         end
         end})
 
-    LocalPlr:addToggle({
+    LocalPlr_SECT:addToggle({
         title = "Float Toggle", 
         default = features["FloatToggle"],
         callback = function(val)
@@ -349,7 +349,7 @@ LocalPlr:addToggle({
         end
         end})
 
-    LocalPlr:addToggle({
+    LocalPlr_SECT:addToggle({
         title = "Noclip", 
         default = features["SpeedToggle"],
         callback = function(val)
@@ -379,7 +379,7 @@ LocalPlr:addToggle({
         end
         end})
         
-    LocalPlr:addToggle({
+    LocalPlr_SECT:addToggle({
         title = "Inf Jump", 
         default = features["InfJToggle"],
         callback = function(val)
@@ -401,30 +401,30 @@ LocalPlr:addToggle({
         end
     end})
     
-    TrollIng:addLabel({title = "      Its Not Working For Sometimes:/"})
-    TrollIng:addToggle({title "Spam Sign", default = features["SpamSign"], callback = function(val)
+    Trolling_SECT:addLabel({title = "      Its Not Working For Sometimes:/"})
+    Trolling_SECT:addToggle({title "Spam Sign", default = features["SpamSign"], callback = function(val)
         
     end})
-    TrollIng:addToggle({title "Spam Decal", default = features["SpamDecal"], callback = function(val)
+    Trolling_SECT:addToggle({title "Spam Decal", default = features["SpamDecal"], callback = function(val)
         
     end})
-    TrollIng:addButton({title = "Grief World", callback = function()
+    Trolling_SECT:addButton({title = "Grief World", callback = function()
         
     end})
     
-    TrollIng:addButton({title = "Delete Everything", callback = function()
+    Trolling_SECT:addButton({title = "Delete Everything", callback = function()
 
     end})
     
-    TrollIng:addLabel({"      World Copier"})
+    Trolling_SECT:addLabel({"      World Copier"})
     
     WorldName = ""
     
-    TrollIng:addTextBox({title = "File Name", callback = function(val)
+    Trolling_SECT:addTextBox({title = "File Name", callback = function(val)
         WorldName = val
     end})
     
-    TrollIng:addButton({title = "Save World", callback = function()
+    Trolling_SECT:addButton({title = "Save World", callback = function()
         if not isfile("/BlocksAte/SavedWorlds/"..WorldName.."_World.lua") then
             puth = 'print("testing")'
             writefile("/BlocksAte/SavedWorlds/"..WorldName.."_World.lua", puth)
@@ -434,7 +434,7 @@ LocalPlr:addToggle({
         end
     end})
     
-    TrollIng:addButton({title = "Load World", callback = function()
+    Trolling_SECT:addButton({title = "Load World", callback = function()
             if isfile("/BlocksAte/SavedWorlds/"..WorldName.."_World.lua") then
             
             local WorldNeed = readfile("/BlocksAte/SavedWorlds/"..WorldName.."_World.lua")
@@ -445,7 +445,7 @@ LocalPlr:addToggle({
         end
     end})
     
-    TrollIng:addButton({title = "Delete World File", callback = function()
+    TrollIng_SECT:addButton({title = "Delete World File", callback = function()
         if isfile("/BlocksAte/SavedWorlds/"..WorldName.."_World.lua") then
             delfile("/BlocksAte/SavedWorlds/"..WorldName.."_World.lua")
             print("Success Deleted File!")
@@ -454,7 +454,7 @@ LocalPlr:addToggle({
         end
     end})
     
-    Setting:addKeybind({title = "Toggle Ui", key = Enum.KeyCode.Tab, callback = function(b)
+    Settings_SECT:addKeybind({title = "Toggle Ui", key = Enum.KeyCode.Tab, callback = function(b)
         UI:toggle()
     end})
     
