@@ -1,5 +1,3 @@
-if ScriptExecuted then return end
-ScriptExecuted = true
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
     local Workspace = game:GetService("Workspace")
     local CoreGui = game:GetService("CoreGui")
@@ -125,7 +123,9 @@ function GetCharacter(Player)
         end
         end)
     end
-
+    velocityHandlerName = "nilhah"
+    gyroHandlerName = "nilhahno"
+    
     function Fly()
         local root = lp.Character:WaitForChild("HumanoidRootPart")
         local camera = workspace.CurrentCamera
@@ -163,7 +163,7 @@ function GetCharacter(Player)
             end)
         
             mfly2 = RS.RenderStepped:Connect(function()
-                root = GetHumPart(lp)
+                root = lp.Character:WaitForChild("HumanoidRootPart")
                 camera = workspace.CurrentCamera
                 if lp.Character:FindFirstChildWhichIsA("Humanoid") and root and root:FindFirstChild(velocityHandlerName) and root:FindFirstChild(gyroHandlerName) then
                     local humanoid = lp.Character:FindFirstChildWhichIsA("Humanoid")
@@ -214,7 +214,7 @@ local tabs = {
     ["Settings"] = main:NewTab({name = "Player"})
 }
 
-Toggle({
+tabs.LocalPlr:NewToggle({
         name = "Speed Toggle", 
         default = features["SpeedToggle"],
         callback = function(val)
@@ -248,7 +248,7 @@ Toggle({
     
 tabs.LocalPlr:NewToggle({
         name = "Fly", 
-        default = functionforscript_mm2["Fly"],
+        default = features["Fly"],
         callback = function(val)
         features["FlyToggle"] = val
         if features["FlyToggle"] then
@@ -260,7 +260,7 @@ tabs.LocalPlr:NewToggle({
     
     tabs.LocalPlr:NewSlider({
     name = "Fly Speed",
-    default = functionforscript_mm2["FlyValue"],
+    default = features["FlyValue"],
     min = 10,
     max = 200,
     callback = function(Value)
@@ -384,11 +384,11 @@ tabs.LocalPlr:NewToggle({
         
     end})
     
-    Trolling_SECT:addButton({name = "Delete Everything", callback = function()
+    tabs.Trolling:NewButton({name = "Delete Everything", callback = function()
 
     end})
     
-    Trolling_SECT:addLabel({name = "      World Copier"})
+    tabs.Trolling:NewLabel({name = "      World Copier"})
     
     WorldName = "SavedWorld"
     
