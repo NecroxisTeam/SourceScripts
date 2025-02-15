@@ -765,7 +765,7 @@ name = title.." | "..version  or "PeaCOCK UI Library"
 		GUI["k"]["Name"] = [[Line]];
 	end
 
-	function UILIB:Toggle()
+	function GUI:Toggle()
             GUI["1"].Enabled = not GUI["1"].Enabled
 	end
 	function GUI.newTab(name, icon)
