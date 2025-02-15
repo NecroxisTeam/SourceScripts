@@ -810,12 +810,12 @@ name = title.." | "..version  or "PeaCOCK UI Library"
 
 			-- StarterGui.Peacock.Main.Navigation.ButtonHolder.Inactive.extension
 			Tab["13"] = Instance.new("ImageLabel", Tab["11"]);
-			Tab["13"]["ZIndex"] = 2;
+			Tab["13"]["ZIndex"] = 5;
 			Tab["13"]["ImageColor3"] = Color3.fromRGB(200, 200, 200);
 			Tab["13"]["Selectable"] = true;
 			Tab["13"]["Image"] = icon;
 			Tab["13"]["ImageRectSize"] = Vector2.new(36, 36);
-			Tab["13"]["LayoutOrder"] = 8;
+			Tab["13"]["LayoutOrder"] = 14;
 			Tab["13"]["Size"] = UDim2.new(0, 25, 0, 25);
 			Tab["13"]["Active"] = true;
 			Tab["13"]["Name"] = name.."_ICON" or "Tab_ICON";
