@@ -521,16 +521,16 @@ end
 		game.TweenService:Create(UI["1"].Loading.BarGroup.Bar, TweenInfo.new(.5), {BackgroundColor3 = Color3.fromRGB(0, 255, 0)}):Play()
 		end
 	end)
-	local ExecutorName = ({pcall(identifyexecutor)})[2]
-	local Executor = ExecutorName:find("Codex" or "Vega" or "Wave" or "Argon" or "Swift" or "Arceus" or "Fluxus" or "Cubix" or "Delta")-- == "Codex" and "Vega" and "Wave" and "Argon" and "Swift"
+	local Executor = table.find({"Codex", "Vega", "Wave", "Argon", "Swift", "Arceus", "Fluxus", "Cubix", "Delta", "Krnl"}, getexecutorname())-- == "Codex" and "Vega" and "Wave" and "Argon" and "Swift"
 	----if Executor then
-	print(ExecutorName,Executor)
+	print(getexecutorname(),Executor)
 		game.TweenService:Create(UI["1"].Loading, TweenInfo.new(.5), {GroupTransparency = 0}):Play()
 		task.wait(0.5)
 	UI["1"].Loading.Status.Text = "Checking Executor"
 	if not Executor  then
 		Notif.New(ExecutorName.." Is Not Supported! Checking Functions...")
-		
+	elseif Executor then
+                Notif.New(ExecutorName.." Is Supported!")
 	end
 	game.TweenService:Create(UI["1"].Loading.BarGroup.Bar, TweenInfo.new(0.5), {Size = UDim2.new(0.25,0,0.5,0)}):Play()
 		task.wait(0.5)
