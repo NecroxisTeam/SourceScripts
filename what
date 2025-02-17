@@ -522,11 +522,18 @@ end
 		end
 	end)
 	print(getexecutorname())
+        local IsSupportCurrentExecutor = function()
+        if getexecutorname() == "Codex" or getexecutorname() == "Vega" or getexecutorname() == "Wave" or getexecutorname() == "Argon" or getexecutorname() == "Swift" or getexecutorname() == "Arceus" or getexecutorname() == "Fluxus" or getexecutorname() == "Cubix" or getexecutorname() == "Delta" or getexecutorname() == "Krnl" then
+	return true
+        end
+        return false
+        end
 		game.TweenService:Create(UI["1"].Loading, TweenInfo.new(.5), {GroupTransparency = 0}):Play()
 		task.wait(0.5)
 	UI["1"].Loading.Status.Text = "Checking Executor"
-	if getexecutorname() == "Codex" or getexecutorname() == "Vega" or getexecutorname() == "Wave" or getexecutorname() == "Argon" or getexecutorname() == "Swift" or getexecutorname() == "Arceus" or getexecutorname() == "Fluxus" or getexecutorname() == "Cubix" or getexecutorname() == "Delta" or getexecutorname() == "Krnl" then
-		Notif.New(getexecutorname().." Is Supported!")
+        local result = pcall(IsSupportCurrentExecutor)
+	if result then
+                Notif.New(getexecutorname().." Is Supported!")
         else 
                 Notif.New(getexecutorname().." Is Not Supported! Checking Functions...")
 	end
