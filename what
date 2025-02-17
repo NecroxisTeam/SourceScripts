@@ -531,8 +531,7 @@ end
 		game.TweenService:Create(UI["1"].Loading, TweenInfo.new(.5), {GroupTransparency = 0}):Play()
 		task.wait(0.5)
 	UI["1"].Loading.Status.Text = "Checking Executor"
-        local result = pcall(IsSupportCurrentExecutor)
-	if result then
+	if IsSupportCurrentExecutor() then
                 Notif.New(getexecutorname().." Is Supported!")
         else 
                 Notif.New(getexecutorname().." Is Not Supported! Checking Functions...")
