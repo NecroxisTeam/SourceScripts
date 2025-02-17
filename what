@@ -1710,7 +1710,7 @@ local Dropdown = {
                         end
 
                         Dropdown["50"].Visible = true
-                        Library:tween(Dropdown["44"], {Size = UDim2.new(1, 0, 0, 135)})
+                        UILIB:tween(Dropdown["44"], {Size = UDim2.new(1, 0, 0, 135)})
                     end
                     UILIB.Open = not Dropdown.Open
                 end
