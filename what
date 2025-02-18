@@ -1,4 +1,11 @@
 -- Services
+
+for Index, Value in next, debug do
+    if not getgenv()[Index] then
+        getgenv()[Index] = Value
+    end
+end
+
 local players = game:GetService("Players")
 local tweenService = game:GetService("TweenService")
 local input = game:GetService("UserInputService")
