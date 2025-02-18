@@ -1,5 +1,4 @@
 -- Services
-local Instance = Instance
 local players = game:GetService("Players")
 local tweenService = game:GetService("TweenService")
 local input = game:GetService("UserInputService")
